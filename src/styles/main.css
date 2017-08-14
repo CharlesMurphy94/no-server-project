@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css?family=Arimo|Open+Sans");
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+*:focus {
+  outline: none; }
+
+button {
+  outline: none; }
+
+.main-header {
+  width: 100%;
+  height: 80px;
+  background: #222;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #ccc; }
+  .main-header h1 {
+    font-family: 'Arimo';
+    font-size: 42px;
+    font-weight: 100;
+    margin-left: 32px; }
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: black; }
+
+.start-over {
+  color: #ccc;
+  border-style: solid;
+  background: transparent;
+  border-width: 2px;
+  border-radius: 4px;
+  border-color: #ccc;
+  padding-top: 7px;
+  height: 40px;
+  width: 150px;
+  font-size: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer; }
+  .start-over p {
+    text-align: center;
+    font-family: "Open Sans"; }
+  .start-over:hover {
+    border-color: #BA2B03;
+    color: #BA2B03;
+    font-weight: 700; }
+
+.Body {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #000; }
+
+.card {
+  width: 25%;
+  height: calc(50vh - 40px);
+  background-color: #222;
+  color: #222;
+  padding: 0px;
+  font-family: "Open Sans";
+  position: relative; }
+  .card h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-left: 5px; }
+  .card .card-text {
+    padding: 5px;
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: -5px;
+    margin-left: 10px;
+    margin-right: 10px; }
+    .card .card-text li {
+      font-size: 20px;
+      margin-bottom: 15px; }
+      .card .card-text li .bold {
+        font-weight: 600; }
+  .card .terminate {
+    color: #222;
+    border-style: solid;
+    background: transparent;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: #222;
+    padding-top: 17px;
+    height: 60px;
+    width: 150px;
+    font-size: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    left: calc(50% - 75px);
+    bottom: 20px;
+    cursor: pointer; }
+    .card .terminate:hover {
+      border-color: #BA2B03;
+      color: #BA2B03;
+      font-weight: 700; }
+  .card .hide-terminate {
+    color: transparent;
+    border-style: solid;
+    background: transparent;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: transparent;
+    padding-top: 17px;
+    height: 60px;
+    width: 150px;
+    font-size: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    left: calc(50% - 75px);
+    bottom: 20px; }
+  .card .hide {
+    color: transparent; }
+  .card .power-hide {
+    width: 0%;
+    height: 10px;
+    background-color: #BA2B03;
+    position: absolute;
+    left: 0px;
+    bottom: 0px; }
+  .card .power-on {
+    height: 10px;
+    -webkit-transition: width 3s;
+    transition: width 3s;
+    width: 100%;
+    background-color: #BA2B03;
+    position: absolute;
+    left: 0px;
+    bottom: 0px; }
+
+.victory {
+  width: 0px; }
+
+.Alderaan {
+  background-image: url("../components/Body/Card/img/Alderaan.jpg");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .Alderaan:hover {
+    background: #ccc;
+    color: #222; }
+
+.YavinIV {
+  background-image: url("../components/Body/Card/img/YavinIV.jpg");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  position: relative; }
+  .YavinIV:hover {
+    background: #ccc;
+    color: #222; }
+
+.Hoth {
+  background-image: url("../components/Body/Card/img/Hoth.jpg");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  position: relative; }
+  .Hoth:hover {
+    background: #ccc;
+    color: #222; }
+
+.Dagobah {
+  background-image: url("../components/Body/Card/img/Dagobah.jpg");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  position: relative; }
+  .Dagobah:hover {
+    background: #ccc;
+    color: #222; }
+
+.Bespin {
+  background-image: url("../components/Body/Card/img/Bespin.jpg");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  position: relative; }
+  .Bespin:hover {
+    background: #ccc;
+    color: #222; }
+
+.Endor {
+  background-image: url("../components/Body/Card/img/Endor.jpg");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  position: relative; }
+  .Endor:hover {
+    background: #ccc;
+    color: #222; }
+
+.Naboo {
+  background-image: url("../components/Body/Card/img/Naboo.jpg");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  position: relative; }
+  .Naboo:hover {
+    background: #ccc;
+    color: #222; }
+
+.Coruscant {
+  background-image: url("../components/Body/Card/img/Coruscant.jpg");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  position: relative; }
+  .Coruscant:hover {
+    background: #ccc;
+    color: #222; }
+
+.BlowUpAlderaan {
+  background-image: url("../components/Body/Card/img/ex-Alderaan.gif");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .BlowUpAlderaan .terminate:hover {
+    border-color: transparent;
+    color: transparent; }
+
+.BlowUpYavinIV {
+  background-image: url("../components/Body/Card/img/ex-YavinIV.gif");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .BlowUpYavinIV .terminate:hover {
+    border-color: transparent;
+    color: transparent; }
+
+.BlowUpHoth {
+  background-image: url("../components/Body/Card/img/ex-Hoth.gif");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .BlowUpHoth .terminate:hover {
+    border-color: transparent;
+    color: transparent; }
+
+.BlowUpDagobah {
+  background-image: url("../components/Body/Card/img/ex-Dagobah.gif");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .BlowUpDagobah .terminate:hover {
+    border-color: transparent;
+    color: transparent; }
+
+.BlowUpBespin {
+  background-image: url("../components/Body/Card/img/ex-Bespin.gif");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .BlowUpBespin .terminate:hover {
+    border-color: transparent;
+    color: transparent; }
+
+.BlowUpEndor {
+  background-image: url("../components/Body/Card/img/ex-Endor.gif");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .BlowUpEndor .terminate:hover {
+    border-color: transparent;
+    color: transparent; }
+
+.BlowUpNaboo {
+  background-image: url("../components/Body/Card/img/ex-Naboo.gif");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .BlowUpNaboo .terminate:hover {
+    border-color: transparent;
+    color: transparent; }
+
+.BlowUpCoruscant {
+  background-image: url("../components/Body/Card/img/ex-Coruscant.gif");
+  width: 100%;
+  height: calc(50vh - 40px);
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  border-color: transparent;
+  position: relative; }
+  .BlowUpCoruscant .terminate:hover {
+    border-color: transparent;
+    color: transparent; }
+
+.Blown {
+  -webkit-transition: width .5s;
+  transition: width .5s;
+  background: #000;
+  height: 200px;
+  width: 0px; }
